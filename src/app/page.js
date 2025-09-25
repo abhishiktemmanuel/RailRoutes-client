@@ -1,25 +1,33 @@
 "use client";
 import React from "react";
-import Header from "./components/layout/Header/Header";
-import Footer from "./components/layout/Footer/Footer";
-import RouteDistanceCalculator from "./components/features/routeDistance/RouteDistanceCalculator";
-import ShortestRouteFinder from "./components/features/shortestRoute/ShortestRouteFinder";
-import "./styles/globals.css";
-import "./styles/components.css";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import DistanceCalculator from "../components/features/distance-calculator/DistanceCalculator";
+import ShortestRouteCalculator from "../components/features/shortest-route/ShortestRouteCalculator";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8 font-inter antialiased">
+      <style>{`
+        .font-inter {
+          font-family: 'Inter', sans-serif;
+        }
+        input[type="text"] {
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus {
+          border-color: #4f46e5;
+          box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+        }
+      `}</style>
+
       <Header />
 
-      <main className="main-content">
-        <div className="container">
-          <div className="grid">
-            <RouteDistanceCalculator />
-            <ShortestRouteFinder />
-          </div>
-        </div>
-      </main>
+      <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <DistanceCalculator />
+        <ShortestRouteCalculator />
+        {/* Additional feature components can be added here */}
+      </div>
 
       <Footer />
     </div>
