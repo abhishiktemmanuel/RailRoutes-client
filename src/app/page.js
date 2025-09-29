@@ -4,6 +4,9 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import DistanceCalculator from "../components/features/distance-calculator/DistanceCalculator";
 import ShortestRouteCalculator from "../components/features/shortest-route/ShortestRouteCalculator";
+import TripsWithMaxStopsCalculator from "@/components/features/trips-with-max-stops/TripsWithMaxStopsCalculator";
+import TripsWithExactStopsCalculator from "@/components/features/trips-with-exact-stops/TripsWithExactStopsCalculator";
+import TripsWithMaxDistanceCalculator from "@/components/features/trips-with-max-distance/TripsWithMaxDistanceCalculator";
 
 const App = () => {
   return (
@@ -26,7 +29,9 @@ const App = () => {
       <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         <DistanceCalculator />
         <ShortestRouteCalculator />
-        {/* Additional feature components can be added here */}
+        <TripsWithMaxStopsCalculator />
+        {/* <TripsWithExactStopsCalculator /> */}
+        <TripsWithMaxDistanceCalculator />
       </div>
 
       <Footer />

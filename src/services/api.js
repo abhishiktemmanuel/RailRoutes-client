@@ -39,4 +39,44 @@ export const railRouteApi = {
     };
     return fetchWithRetry(url, options);
   },
+
+  // Question 6: Trips with max stops
+  getTripsWithMaxStops: async (start, end, maxStops) => {
+    const url = `${API_BASE_URL}/trips/max-stops?start=${start}&end=${end}&maxStops=${maxStops}`;
+    const options = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    return fetchWithRetry(url, options);
+  },
+
+  // Question 7: Trips with exact stops
+  getTripsWithExactStops: async (start, end, exactStops) => {
+    const url = `${API_BASE_URL}/trips/exact-stops?start=${start}&end=${end}&exactStops=${exactStops}`;
+    const options = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    return fetchWithRetry(url, options);
+  },
+
+  // Question 10: Trips with max distance
+  getTripsWithMaxDistance: async (start, end, maxDistance) => {
+    const url = `${API_BASE_URL}/trips/max-distance?start=${start}&end=${end}&maxDistance=${maxDistance}`;
+    const options = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    return fetchWithRetry(url, options);
+  },
+
+  // Optional: Reload routes from file
+  reloadRoutes: async () => {
+    const url = `${API_BASE_URL}/reload-routes`;
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    };
+    return fetchWithRetry(url, options);
+  },
 };
